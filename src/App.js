@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import getMovies from "./utils";
 
 function App() {
+
+  getMovies();
+
   return (
     <div className="App">
       <header className="App-header">
