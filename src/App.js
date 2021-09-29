@@ -7,14 +7,21 @@ import Movies from './components/Movies';
 
 function App() {
 
-  const [movies, setMovies] = useState(false)
+  const [movies, setMovies] = useState();
 
   const [error, setError] = useState();
 
-  const getFilms = async () => {
+  const getMovieData = async () => {
     let res = await getData(setError)
     setMovies(res)
   }
+
+  useEffect(() => {
+    getMovieData()
+    // Empty array to prevent loop
+  }, []);
+
+  console.log(movies);
 
   return (
     <Movies />

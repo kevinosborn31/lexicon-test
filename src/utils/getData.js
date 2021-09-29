@@ -2,18 +2,19 @@ import api from "./api";
 import getMovies from "./getMovies"
 
 
-const getData = async (setError, setOpen) => {
+const getData = async (setError) => {
   
   try{
-    const filmResponse = await filmApi.get('filmworld/movies')
+    const filmResponse = await api.get('filmworld/movies')
     const filmData = await filmResponse.data.Movies
-    const cinemaResponse = await filmApi.get('cinemaworld/movies')
+    const cinemaResponse = await api.get('cinemaworld/movies')
     const cinemaData = await cinemaResponse.data.Movies
-    const movieList = await createMovies(cinemaData, filmData)
+    console.log("film data" + filmData)
+    console.log("cinema data" + cinemaData)
+    const movieList = await getMovies(cinemaData, filmData)
     return movieList
   } catch {
     setError("Failed to load data. Reloading.");
-    setOpen(true);
   }
 }
 
