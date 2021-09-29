@@ -2,9 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import getMovies from "./utils";
 
+getMovies(filmworld);
+
 function App() {
 
-  getMovies();
+
 
   return (
     <div className="App">
