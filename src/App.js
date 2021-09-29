@@ -1,29 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/style.css';
 import getMovies from "./utils";
+import MovieListing from './components/MovieListing';
 
-getMovies(filmworld);
+const filmWorld = getMovies("filmworld");
+
+const cinemaWorld = getMovies("cinemaworld");
 
 function App() {
-
-
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="page-wrapper">
+        <h1 className="primary-header">Prince's Theatre</h1>
+        <h2 className="secondary-header">Classic Movies At Home</h2>
+        <p className="random-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et ex ac risus volutpat pellentesque a nec nisi. In massa justo, viverra ut cursus sit amet, lacinia at metus. Donec ut est ut mi mollis pharetra quis a mauris. Nunc at justo velit. Quisque enim massa, porttitor venenatis dictum vitae, lobortis at sem.</p>
+        <h2 className="mobile-header">Classic Movie List</h2>
+        <MovieListing />
     </div>
   );
 }

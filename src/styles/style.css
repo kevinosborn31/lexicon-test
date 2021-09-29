@@ -1,0 +1,23 @@
+body {
+    background-color: #eeeeee;
+}
+
+.page-wrapper {
+    margin: auto 20%;
+}
+
+.primary-header {
+    text-align: center;
+}
+
+.secondary-header {
+    text-align: center;
+}
+
+.random-text {
+    text-align: center;
+}
+
+.mobile-header {
+    display: none;
+}
