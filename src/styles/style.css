@@ -22,6 +22,9 @@ body {
     min-height: 300px;
 }
 
+.best-deal {
+    font-weight: bold;
+}
 
 .movie-info {
     text-align: center;

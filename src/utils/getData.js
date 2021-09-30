@@ -1,7 +1,7 @@
 import api from "./api";
 import getMovies from "./getMovies"
 
-const getData = async (throwError) => {
+const getData = async () => {
 
   // Retry API calls 100x
   async function retryRequest(cinema) {
