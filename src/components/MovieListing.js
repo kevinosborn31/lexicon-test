@@ -8,16 +8,18 @@ const MovieListing= ({id, image, title, cinemaPrice, filmPrice}) => {
     return (
         <div className="movie-listing-wrapper">
 
-        <li class="movie-listing-item">
-                <div class="movie-image-container">
-                    <img src={image} alt={title} />
-                </div>
-                <div class="movie-info">
-                    <p class="movie-name">{title}</p>
-                    <p class="movie-price">CinemaWorld: {cinemaPrice}</p>
-                    <p class="movie-price">Filmworld: {filmPrice}</p>
-                </div>
-        </li>
+            <li className="movie-listing-item">
+                    <div className="movie-image-container">
+                        <img src={image} alt={title} />
+                    </div>
+                    <div className="movie-info">
+                        <div className="movie-price-wrapper">
+                            <p className="movie-price">CinemaWorld: {cinemaPrice}</p>
+                            <p className="movie-price">FilmWorld: {filmPrice}</p>
+                        </div>
+                        <p className="movie-name">{title}</p>
+                    </div>
+            </li>
         </div>
     )
 }

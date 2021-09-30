@@ -6,7 +6,7 @@ const MoviesContainer = ({movieList}) => {
 
   return(
     <div>
-      <ul class="movie-listing">
+      <ul className="movie-listing">
     {movieList.movies.map(({id, poster, title, cinemaPrice, filmPrice}) => (
           <MovieListing 
             id={id} 
@@ -17,7 +17,7 @@ const MoviesContainer = ({movieList}) => {
             filmPrice={filmPrice}  
           />
     ))}
-    </ul>
+      </ul>
     </div>
   )
 }

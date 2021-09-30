@@ -3,7 +3,11 @@ body {
 }
 
 .page-wrapper {
-    margin: auto 20%;
+    margin: auto 5%;
+}
+
+.header-wrapper{
+    margin: 2% 30%;
 }
 
 .primary-header {
@@ -22,19 +26,23 @@ body {
     display: none;
 }
 
+.movie-image-container {
+    min-height: 250px;
+}
+
 
 .movie-info {
-    margin-top: auto;
-    padding: 10px;
     text-align: center;
-  }
+    padding-top: 10px;
+}
 
-  .movie-name {
+.movie-name {
     text-align: left;
     color: black;
-    font-size: 1.5rem;
-  }
-  .movie-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.movie-price {
     text-align: left;
     color: black;
 }
@@ -42,7 +50,6 @@ body {
 img {
     width: 100%;
     height: 100%;
-    border-radius: 24px !important;
     object-fit: cover;
 }
 
@@ -50,27 +57,35 @@ img {
     list-style: none;
     margin: 2em;
     display: grid;
-    gap: 80px;
+    gap: 50px;
     grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
     padding-top: 50px;
   }
-  .movie-listing-item {
+
+.movie-price-wrapper {
+    margin-bottom: auto;
+  }
+.movie-listing-item {
     border: 1px solid black;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    border-radius: 24px !important;
-    padding: 20px 40px 40px 40px;
-  }
+    padding: 20px;
+    min-height: 475px;
+}
 
-  @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
     .movie-listing {
         margin: 0;
         margin-left: -40px;
     }
 }
-    @media screen and (max-width: 800px) {
-        .movie-listing {
-            margin-left: -30px;
-        }
+@media screen and (max-width: 800px) {
+    .movie-listing {
+        margin-left: -30px;
     }
+    .mobile-header {
+        display: block;
+        text-align: center;
+    }
+}
