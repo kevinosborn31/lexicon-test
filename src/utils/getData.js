@@ -1,9 +1,9 @@
 import api from "./api";
 import getMovies from "./getMovies"
 
-
 const getData = async (throwError) => {
 
+  // Retry API calls 100x
   async function retryRequest(cinema) {
     return new Promise(async (resolve, reject) => {
       let retries = 0;
@@ -21,18 +21,14 @@ const getData = async (throwError) => {
           retries++;
         }
       }
-      reject();
+      reject("Sorry something went wrong, please try again later");
     })
   }
-  try { 
-    const filmResponse = await retryRequest("filmworld").catch((err) => { console.error(err); });
-    console.log(filmResponse);
-    const cinemaResponse = await retryRequest("cinemaworld").catch((err) => { console.error(err); });
+    const filmResponse = await retryRequest("filmworld").catch((err) => { alert(err); });
+    const cinemaResponse = await retryRequest("cinemaworld").catch((err) => { alert(err); });
     const movieList = getMovies(cinemaResponse, filmResponse);
     return movieList;
-  } catch {
-    throwError("Sorry, please try again later");
-  }
+
 }
 
 export default getData;
