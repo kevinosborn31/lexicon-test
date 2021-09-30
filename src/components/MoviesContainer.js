@@ -1,11 +1,11 @@
 import MovieListing from './MovieListing';
 import { useState, useEffect } from 'react';
 
-const MoviesContainer = ({movies}) => {
+const MoviesContainer = ({movieList}) => {
 
   return(
     <div>
-        {movies.movies.map(({id, poster, title, cwPrice, fwPrice}) => (
+        {movieList.movies.map(({id, poster, title, cwPrice, fwPrice}) => (
           <MovieListing 
             id={id} 
             image={poster} 

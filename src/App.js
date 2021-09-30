@@ -7,7 +7,7 @@ import MoviesContainer from './components/MoviesContainer';
 
 function App() {
 
-  const [movies, setMovies] = useState();
+  const [movieList, setMovies] = useState();
 
   const [error, setError] = useState();
 
@@ -21,11 +21,11 @@ function App() {
     // Empty array to prevent loop
   }, []);
 
-  console.log(movies);
+  console.log(movieList);
 
   return (
     <MoviesContainer
-      movies={movies}
+      movieList={movieList}
     />
   );
 }
