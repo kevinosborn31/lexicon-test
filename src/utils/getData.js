@@ -4,6 +4,7 @@ import getMovies from "./getMovies"
 const getData = async () => {
 
   // Retry API calls 100x
+  // TODO: Unit test for this
   async function retryRequest(cinema) {
     return new Promise(async (resolve, reject) => {
       let retries = 0;

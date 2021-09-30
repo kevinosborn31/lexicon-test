@@ -26,7 +26,7 @@ The main challenge of implementing this user story was the unreliability of the 
 Unit tests were a pain point for me, having limited experience in testing I struggled to find anywhere in the code where a unit test would be appropriate. I would like to write a test for the following:
 
 * Retry request function
-* Price comparison function
+* Write a price comparison function and test it
 
 ## Assumptions
 I have assumed this will be a one-page application, consuming 2 different API endpoints for 2 cinemas. I also assumed the endpoint was unreliable, which needed the call to be re-run automatically.
