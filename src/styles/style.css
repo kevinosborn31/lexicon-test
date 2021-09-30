@@ -19,7 +19,7 @@ body {
 }
 
 .movie-image-container {
-    min-height: 250px;
+    min-height: 300px;
 }
 
 
@@ -37,6 +37,10 @@ body {
 .movie-price {
     text-align: left;
     color: black;
+}
+
+.best-price {
+    font-weight: bold;
 }
 
 img {

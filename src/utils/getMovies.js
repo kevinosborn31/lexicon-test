@@ -1,27 +1,23 @@
 const getMovies = (filmMovies, cinemaMovies) => {
-    let listOfMovies = {movies: []};
+    let movieData = {movies: []};
   
-    if(filmMovies.length === 0 || cinemaMovies === 0) return null
-  
+    if(filmMovies.length === 0 || cinemaMovies.length === 0) return null
 
-    cinemaMovies.forEach(cinemaMovie => {
-      filmMovies.forEach(filmMovie => {
-        if(filmMovie.ID || filmMovie.ID){
-          if(filmMovie.ID.slice(2) === cinemaMovie.ID.slice(2)){
-            listOfMovies.movies.push ({
-              id: cinemaMovie.ID.slice(2),
-              title: cinemaMovie.Title,
-              poster: cinemaMovie.Poster,
-              cinemaPrice: cinemaMovie.Price.toFixed(2),
-              filmPrice: filmMovie.Price.toFixed(2)
-            })
+    for (let cinemaMovie of cinemaMovies) {
+      for (let filmMovie of filmMovies) {
+        if (filmMovie.Title == cinemaMovie.Title) {
+          movieData.movies.push ({
+            id: cinemaMovie.ID.slice(2),
+            title: cinemaMovie.Title,
+            poster: cinemaMovie.Poster,
+            cinemaPrice: cinemaMovie.Price.toFixed(2),
+            filmPrice: filmMovie.Price.toFixed(2)
+          })
+          break;
         }
       }
-      })
-    })
-  
-    if(listOfMovies.movies.length === 0){return {error: "Incorrect or missing Inputs"}}
-    return listOfMovies;
+    }
+    return movieData;
   }
 
   export default getMovies;

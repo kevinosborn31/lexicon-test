@@ -12,7 +12,7 @@ function App() {
   const [error, throwError] = useState();
 
   const getMovieData = async () => {
-    let response = await getData(setError)
+    let response = await getData(throwError)
     setMovies(response)
   }
 
