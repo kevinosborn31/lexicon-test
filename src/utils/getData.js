@@ -7,7 +7,7 @@ const getData = async () => {
   async function retryRequest(cinema) {
     return new Promise(async (resolve, reject) => {
       let retries = 0;
-      const maxRetries = 100;
+      const maxRetries = 50;
       let success = false;
   
       while (retries < maxRetries && !success) {

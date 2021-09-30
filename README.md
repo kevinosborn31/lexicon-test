@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Princes Theatre
+![desktop image of web app](./app.png)
+## About the app
+This is a simple price comparison web application to view a list of movies playing at 2 separate theatres. It highlights the cheapest price allowing for the client to make better financial movie-watching decisions.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies and Libraries used
+This application is built on React with javascript. It uses Axios to make calls to the API.
+  
+## How to run
+1. Clone the repository `$ git clone https://github.com/kevinosborn31/lexicon-test.git`
+2. Navigate to the app:  `$ cd lexicon-test` 
+3. Install required node packages and dependencies: `$ npm install`
+4. Start the app: `$ npm start`
+5. Application should run at: `http://localhost:3000/`
 
-## Available Scripts
+## Design and Architectural decisions
+I have decided to use React to solve this problem as ease of re-use of components allows for strong scalability, if more movies or theatres were to be added, the app would have no issues consuming them.
 
-In the project directory, you can run:
+Design wise, I have opted to use a mobile first design, using vanilla CSS. I considered using SASS but it seemed quite unnecessary for an app with only one page. Of course, using mobile first design and ensuring the UI is responsive.
 
-### `yarn start`
+I have compared the two cinema's prices by merging both objects of data into it's own "movieData" object stored in state, allowing for direct use of the "cinemaPrice' and "filmPrice" data elements.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The main challenge of implementing this user story was the unreliability of the API, which only worked just over half the time. My solution to this was to write a "retry" function, which will continue to re try to API call up to a max. This solution allows for a seamless reload, that the user doesn't even notice unless the console is open. If the endpoint is completely dead though and it fails after 50 tries, it will throw an error.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Testing
+Unit tests were a pain point for me, having limited experience in testing I struggled to find anywhere in the code where a unit test would be appropriate. The API calls are already catching the back end errors and validating the information coming through so it wouldn't be necessary there.
 
-### `yarn test`
+## Assumptions
+I have assumed this will be a one-page application, consuming 2 different API endpoints for 2 cinemas. I also assumed the endpoint was unreliable, which needed the call to be re-run automatically.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Future Development
+Having only put this application together in 2 days, there are certain areas that can be improved to allow for a better user experience, and scalability. These are listed in order of priority
 
-### `yarn build`
+* Improved unit test coverage
+* Fix small bugs in CSS, for movie tiles to be completely uniform
+* Design a better solution for highlighting the best price, ideally to be within a function which can be tested
+* Implement localhost cache storage for consumed movie data
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Take away
+I certainly learnt more than I thought I would when creating this app, I don't often build applications from scratch, which was invaluable practice. It was also a challenge to deal with the unreliable endpoint as well as combining the 2 cinema objects with different ID's in order to compare the price.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I will be using the axios re-try function in future applications, even if the endpoint is reliable as it will catch any edge cases of data not being returned, and avoid ruining the user experience.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
