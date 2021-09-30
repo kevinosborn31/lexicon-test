@@ -12,6 +12,7 @@ const getData = async (setError) => {
     console.log("film data" + filmData)
     console.log("cinema data" + cinemaData)
     const movieList = await getMovies(cinemaData, filmData)
+    console.log(movieList);
     return movieList
   } catch {
     setError("Failed to load data. Reloading.");

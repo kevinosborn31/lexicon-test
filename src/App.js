@@ -7,26 +7,24 @@ import MoviesContainer from './components/MoviesContainer';
 
 function App() {
 
-  const [movieList, setMovies] = useState();
+  const [movieList, setMovies] = useState(false);
 
   const [error, setError] = useState();
 
   const getMovieData = async () => {
-    let res = await getData(setError)
-    setMovies(res)
+    let response = await getData(setError)
+    setMovies(response)
   }
 
   useEffect(() => {
     getMovieData()
-    // Empty array to prevent loop
   }, []);
 
-  console.log(movieList);
-
   return (
-    <MoviesContainer
-      movieList={movieList}
-    />
+    <div>
+      {movieList && <MoviesContainer movieList={movieList}/>}
+    </div>
+    
   );
 }
 
