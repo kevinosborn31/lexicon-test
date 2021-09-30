@@ -9,7 +9,7 @@ function App() {
 
   const [movieList, setMovies] = useState(false);
 
-  const [error, setError] = useState();
+  const [error, throwError] = useState();
 
   const getMovieData = async () => {
     let response = await getData(setError)
