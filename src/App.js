@@ -3,7 +3,7 @@ import './styles/style.css';
 import { useEffect, useState } from 'react';
 import getData from './utils/getData';
 import getMovies from './utils/getMovies';
-import Movies from './components/Movies';
+import MoviesContainer from './components/MoviesContainer';
 
 function App() {
 
@@ -24,7 +24,9 @@ function App() {
   console.log(movies);
 
   return (
-    <Movies />
+    <MoviesContainer
+      movies={movies}
+    />
   );
 }
 
