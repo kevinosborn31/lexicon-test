@@ -1,4 +1,5 @@
 const getMovies = (filmMovies, cinemaMovies) => {
+  
     let movieData = {movies: []};
 
     // Merge both cinema's movies into one array of movies

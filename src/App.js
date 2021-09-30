@@ -6,7 +6,7 @@ import MoviesContainer from './components/MoviesContainer';
 
 function App() {
 
-  const [movieList, setMovies] = useState(false);
+  const [movieList, setMovies] = useState();
 
   const getMovieData = async () => {
     let response = await getData()

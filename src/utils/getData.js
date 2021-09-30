@@ -25,8 +25,11 @@ const getData = async (throwError) => {
     })
   }
     const filmResponse = await retryRequest("filmworld").catch((err) => { alert(err); });
+
     const cinemaResponse = await retryRequest("cinemaworld").catch((err) => { alert(err); });
+
     const movieList = getMovies(cinemaResponse, filmResponse);
+    
     return movieList;
 
 }

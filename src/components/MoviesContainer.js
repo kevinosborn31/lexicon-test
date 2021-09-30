@@ -7,7 +7,7 @@ const MoviesContainer = ({movieList}) => {
   return(
     <div>
       <ul className="movie-listing">
-    {movieList.movies.map(({id, poster, title, cinemaPrice, filmPrice}) => (
+        {movieList.movies.map(({id, poster, title, cinemaPrice, filmPrice}) => (
           <MovieListing 
             id={id} 
             image={poster} 
@@ -16,10 +16,11 @@ const MoviesContainer = ({movieList}) => {
             cinemaPrice={cinemaPrice} 
             filmPrice={filmPrice}  
           />
-    ))}
+        ))}
       </ul>
     </div>
   )
+  
 }
 
 export default MoviesContainer;
