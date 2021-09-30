@@ -3,23 +3,25 @@ import '../styles/style.css';
 
 
 
-function MovieListing() {
+const MovieListing= ({id, image, title, cinemaPrice, filmPrice}) => {
 
     return (
         <div className="movie-listing-wrapper">
             <div className="movie-image-wrapper">
-                <img src="" alt="" />
+                <img src={image} alt={title} />
             </div>
             <div className="movie-info">
-                <h2 className="movie-name">Star Wars</h2>
+                <h2 className="movie-name">{title}</h2>
                 <p className="cinema-name">Cinemaworld</p>
-                <p className="movie-price">$50</p>
+                <p className="movie-price">{cinemaPrice}</p>
                 <p className="cinema-name">Filmworld</p>
-                <p className="movie-price">$50</p>
+                <p className="movie-price">{filmPrice}</p>
             </div>
         </div>
     )
 }
+
+
 
 
 
