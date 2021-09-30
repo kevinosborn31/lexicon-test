@@ -6,7 +6,8 @@ const getMovies = (filmMovies, cinemaMovies) => {
 
     cinemaMovies.forEach(cinemaMovie => {
       filmMovies.forEach(filmMovie => {
-        if(filmMovie.ID || filmMovie.ID && filmMovie.ID.slice(2) === cinemaMovie.ID.slice(2)){
+        if(filmMovie.ID || filmMovie.ID){
+          if(filmMovie.ID.slice(2) === cinemaMovie.ID.slice(2)){
             listOfMovies.movies.push ({
               id: cinemaMovie.ID.slice(2),
               title: cinemaMovie.Title,
@@ -15,6 +16,7 @@ const getMovies = (filmMovies, cinemaMovies) => {
               filmPrice: filmMovie.Price.toFixed(2)
             })
         }
+      }
       })
     })
   
