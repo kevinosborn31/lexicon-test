@@ -3,12 +3,12 @@ import getMovies from "./getMovies"
 
 const getData = async () => {
 
-  // Retry API calls 100x
+  // Retry API calls 10x
   // TODO: Unit test for this
   async function retryRequest(cinema) {
     return new Promise(async (resolve, reject) => {
       let retries = 0;
-      const maxRetries = 50;
+      const maxRetries = 10;
       let success = false;
   
       while (retries < maxRetries && !success) {
